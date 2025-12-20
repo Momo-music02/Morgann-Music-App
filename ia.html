@@ -8,18 +8,16 @@
     <meta property="og:image" content="https://pub-5f04a81bee8d4b47a9f6e03813810418.r2.dev/Vas-y%20clique%20app.png">
     <title>Morgann Music App</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16 .png">
-    <link rel="icon" type="image/ico" sizes="48x48" href="/favicon .ico">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png">
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
-
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-iconc.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16c.png">
+    <link rel="icon" type="image/ico" sizes="48x48" href="/faviconc.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32c.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192c.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512c.png">
     <meta name="theme-color" content="#ffffff">
     <style>
+        /* Définition de la police pour un look moderne et clair */
+        
         body {
             font-family: 'Inter', sans-serif;
             background-color: black;
@@ -28,6 +26,7 @@
             align-items: center;
             min-height: 200px;
             margin: 0;
+            /* Police principale pour Morgann Music */
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
         }
         
@@ -42,8 +41,11 @@
             z-index: 1000;
             cursor: pointer;
             border-top-left-radius: 0;
+            /* Coin supérieur gauche */
             border-top-right-radius: 0;
+            /* Coin supérieur droit */
             border-bottom-left-radius: 30px;
+            /* Coin inférieur gauche arrondi */
             border-bottom-right-radius: 30px;
         }
         
@@ -51,8 +53,11 @@
             background: rgba(255, 255, 255, 0.25);
             box-shadow: 0 0 25px rgba(255, 255, 255, 0.851);
             border-top-left-radius: 0;
+            /* Coin supérieur gauche */
             border-top-right-radius: 0;
+            /* Coin supérieur droit */
             border-bottom-left-radius: 35px;
+            /* Coin inférieur gauche arrondi */
             border-bottom-right-radius: 2px;
         }
         
@@ -61,8 +66,11 @@
             backdrop-filter: blur(10px);
             box-shadow: 0 0 50px rgba(0, 0, 0, 0.567);
             border-top-left-radius: 0;
+            /* Coin supérieur gauche */
             border-top-right-radius: 0;
+            /* Coin supérieur droit */
             border-bottom-left-radius: 30px;
+            /* Coin inférieur gauche arrondi */
             border-bottom-right-radius: 30px;
         }
         
@@ -70,8 +78,11 @@
             background: rgba(255, 255, 255, 0.15);
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.567);
             border-top-left-radius: 0;
+            /* Coin supérieur gauche */
             border-top-right-radius: 0;
+            /* Coin supérieur droit */
             border-bottom-left-radius: 15px;
+            /* Coin inférieur gauche arrondi */
             border-bottom-right-radius: 15px;
         }
         
@@ -119,28 +130,37 @@
         @media (max-width: 768px) {
             .navbar .menu-toggle {
                 display: block;
+                /* FIX: Assure que le bouton est visible sur mobile */
                 position: relative;
                 z-index: 9999;
                 color: var(--text-color3);
+                /* Assure que le bouton est au-dessus de tout pour être cliquable */
             }
             .navbar ul {
+                /* Menu mobile réduit sur le côté */
                 position: absolute;
                 top: 65px;
                 right: 0;
                 width: 200px;
+                /* Largeur réduite pour le menu latéral */
                 background: rgb(142, 142, 142);
                 color: #992a99;
+                /* J'ai gardé votre couleur ajustée */
                 flex-direction: column;
                 align-items: flex-start;
-                border: oldlace 1px solid;
                 backdrop-filter: blur(10px);
                 padding: 15px;
+                /* STRATÉGIE pour la visibilité et éviter le blocage des clics */
                 display: flex;
                 visibility: hidden;
+                /* Cache le menu */
                 pointer-events: none;
+                /* TRÈS IMPORTANT: Empêche le menu masqué de bloquer le clic sur le bouton */
                 border-radius: 35px;
+                /* J'ai gardé votre rayon de bordure ajusté */
                 transition: all 0.5s ease;
                 transform: translateX(100%);
+                /* Masque le menu à droite (hors de vue) */
             }
             .navbar ul:hover {
                 border-radius: 0 0 0 25px;
@@ -150,9 +170,12 @@
             }
             .navbar ul.active {
                 visibility: visible;
+                /* Révèle le menu */
                 pointer-events: all;
                 backdrop-filter: blur(10px);
+                /* Permet d'interagir avec le menu */
                 transform: translateX(0);
+                /* Révèle le menu */
             }
             .navbar ul li {
                 width: 100%;
@@ -163,23 +186,32 @@
                 opacity: 0.5;
             }
         }
+        /* Style personnalisé pour les boutons pilules */
         
         .btn-pill {
+            /* Transforme les boutons en pilules */
             border-radius: 50px;
             font-weight: 600;
             padding: 10px 25px;
+            /* AJOUT IMPORTANT : Transition pour la fluidité (300ms) */
             transition: all 0.3s;
             white-space: nowrap;
+            /* Assure que la taille des boutons est plus stable */
+            /* Enlève la décoration du lien (soulignement) */
             text-decoration: none;
+            /* Assure que le lien remplisse la cellule de la grille et se comporte comme un bloc pour le centrage */
             text-align: center;
             align-items: center;
             align-self: center;
             align-content: center;
         }
+        /* NOUVEAU : Effet au survol (hover) */
         
         .btn-pill:hover {
+            /* Fait grossir le bouton de 5% */
             transform: scale(1.2);
             border: #7b7b7ba1 2px solid;
+            /* Ajoute une petite ombre pour donner un effet de "pop-out" */
             box-shadow: 0 0 20px rgba(255, 255, 255, 0.877);
             font-weight: 700;
         }
@@ -188,6 +220,7 @@
             font-size: 5vw;
             font-weight: 600;
             color: #ffffff;
+            /* Couleur du texte principal (gris très foncé) */
             text-align: left;
             line-height: 1.1;
             cursor: pointer;
@@ -199,19 +232,29 @@
         .hero-text:hover {
             text-shadow: rgba(255, 255, 255, 0.364) 0px 0px 8px;
         }
+        /* 2. Style spécifique pour le mot "News" (Police Manuscrite + Couleur Dégradée) */
         
         .highlight {
+            /* NOUVELLE POLICE UNIQUEMENT POUR "NEWS" */
             font-family: 'helvetica', cursive;
             font-size: 5.5vw;
+            /* Légèrement plus grand pour compenser l'aspect manuscrit */
             font-weight: 400;
-            background-image: linear-gradient( 90deg, #cecece, #7d7d7d);
+            /* Pacifico n'a pas de graisse (weight) à définir */
+            /* DÉGRADÉ (L'effet "Air") */
+            background-image: linear-gradient( 90deg, #cecece, /* Violet */
+            #7d7d7d/* Bleu */
+            );
+            /* Ces propriétés appliquent le dégradé uniquement au texte */
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             text-fill-color: transparent;
+            /* Animation de lueur subtile */
             transition: filter 0.5s ease, transform 0.10s ease;
             margin-bottom: 20px;
         }
+        /* 3. Animation de mot individuel */
         
         .word {
             display: inline-block;
@@ -225,26 +268,42 @@
             text-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
             margin-bottom: 20px;
         }
+        /* Animation pour "News" au survol */
         
         .highlight:hover {
             filter: brightness(1.9);
             transform: translateY(-30px);
             margin-bottom: 20px;
+            background-image: linear-gradient( 90deg, #8ef7ff, /* Violet */
+            #00ccff/* Bleu */
+            );
+            /* Se soulève comme les autres mots */
         }
         
         .info-bouton {
+            /* Positionnement fixé (inchangé) */
             position: fixed;
             bottom: 20px;
             right: 20px;
             z-index: 1000;
+            /* Taille et forme du conteneur */
             width: 50px;
+            /* Définir une taille fixe pour le bouton */
             height: 50px;
+            /* Définir une taille fixe pour le bouton */
             border-radius: 50%;
+            /* Rendre le bouton rond */
+            /* Centrage de l'image à l'intérieur du bouton */
             display: flex;
             justify-content: center;
             overflow: hidden;
+            /* Cache le texte qui dépasse */
+            /* Centrage horizontal */
             align-items: center;
+            /* Centrage vertical */
+            /* Design (Ajusté pour que l'image apparaisse bien) */
             background-color: white;
+            /* Couleur du fond du cercle */
             border: none;
             cursor: pointer;
             box-shadow: 0 4px 8px rgba(255, 255, 255, 0.364);
@@ -265,24 +324,33 @@
             right: 20px;
             z-index: 1000;
             display: flex;
+            /* Permet un bon positionnement interne */
         }
         
         .bouton-icone {
             width: 25px;
             height: 25px;
             flex-shrink: 0;
+            /* Empêche l'icône de rétrécir */
             transition: margin-right 0.4s ease-out;
+            /* Pour animer le déplacement de l'icône */
         }
+        /* --- Styles du TEXTE caché initialement --- */
         
         .info-texte {
             color: rgb(0, 0, 0);
             font-family: sans-serif;
             font-size: 14px;
             white-space: nowrap;
+            /* Empêche le texte de passer à la ligne */
             margin-left: 0;
+            /* Pas de marge à gauche quand fermé */
             opacity: 0;
+            /* Invisible quand fermé */
             max-width: 0;
+            /* Prend 0 largeur quand fermé */
             transition: opacity 0.3s ease-out, max-width 0.3s ease-out, margin-left 0.4s ease-out;
+            /* Anime l'apparition du texte */
         }
         
         .info-texte-lien {
@@ -290,28 +358,44 @@
             font-family: sans-serif;
             font-size: 14px;
             white-space: nowrap;
+            /* Empêche le texte de passer à la ligne */
             margin-left: 0;
+            /* Pas de marge à gauche quand fermé */
             opacity: 0;
+            /* Invisible quand fermé */
             max-width: 0;
+            /* Prend 0 largeur quand fermé */
             transition: opacity 0.3s ease-out, max-width 0.3s ease-out, margin-left 0.4s ease-out;
+            /* Anime l'apparition du texte */
         }
+        /* --- Styles lorsque le bouton est OUVERT (classe 'ouvert') --- */
         
         .info-bouton.ouvert {
             width: 205px;
+            /* Largeur du bouton quand il est ouvert */
             border-radius: 25px;
+            /* Bordure légèrement arrondie quand ouvert (forme de pilule) */
+            /* L'icône se décale vers la gauche */
             justify-content: flex-start;
+            /* Aligne l'icône à gauche */
             padding-left: 15px;
+            /* Petit espace à gauche de l'icône */
         }
         
         .info-bouton.ouvert .bouton-icone {
             margin-right: 10px;
+            /* Ajoute un espace entre l'icône et le texte */
         }
         
         .info-bouton.ouvert .info-texte {
             opacity: 1;
+            /* Rends le texte visible */
             max-width: 200px;
+            /* Donne une largeur maximale au texte */
             margin-left: 0;
+            /* Pas de marge supplémentaire */
             padding-right: 15px;
+            /* Petit espace à droite du texte */
         }
         
         .titre-navbar {
@@ -324,7 +408,7 @@
         }
         
         .titre-navbar:hover {
-            text-shadow: 0 0 40px rgb(255, 255, 255) !important;
+            text-shadow: 0 0 10px rgb(0, 145, 255);
             transform: translateY(-10px);
         }
         
@@ -333,54 +417,38 @@
             color: white;
             text-align: left;
         }
-        
-        .espace-btn {
-            margin-top: 40px;
-            margin-bottom: auto;
-        }
-        
-        .glow-line {
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 0px;
-            background: linear-gradient(90deg, #777777, #ececec, #828282, #ffffff, #9d9d9d);
-            z-index: 9999;
-            position: fixed;
-        }
-        
-        .glow-line::after {
-            content: "";
-            position: absolute;
-            top: 1;
-            left: 0;
-            width: 100%;
-            height: 40px;
-            background: inherit;
-            filter: blur(15px);
-            opacity: 0.5;
-        }
-        
-        .glow-line::after:hover {
-            opacity: 1;
-        }
     </style>
 </head>
 
-<div class="glow-line"></div>
-
-
-
+<header class="navbar" id="navbar">
+    <nav>
+        <div class="logo">
+            <a href="index.html">
+                <img src="logo3.png" alt="Logo Morgann Music" />
+            </a>
+        </div>
+        <!-- Bouton Menu Hamburger -->
+        <button class="menu-toggle" id="menu-toggle">☰</button>
+        <ul id="nav-links">
+            <!-- MODIFIEZ CES LIENS pour votre nouveau site -->
+            <li><a href="index.html">App</a></li>
+            <li><a href="ia.html">IA</a></li>
+            <li><a href="ia-chat.html">IA chat</a></li>
+        </ul>
+    </nav>
+</header>
 
 <body class="bg-black text-white min-h-screen flex flex-col items-center justify-center p-4">
 
 
+    <!-- Conteneur principal pour centrer le contenu -->
     <div class="w-full max-w-7xl">
 
         <div class="titre-navbar">
-            <h1>Application</h1>
+            <h1><strong>IA</strong></h1>
         </div>
 
+        <!-- Titre -->
         <div id="morgann-text" class="hero-text">
             <span class="word">Morgann</span>
             <span class="word">Music</span>
@@ -388,35 +456,18 @@
         </div>
 
 
-        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4 md:gap-6 p-8 bg-black-900/50 rounded-xl shadow-2xl">
+        <!-- Conteneur des boutons (Centré au milieu) -->
+        <!-- Responsive Grid mis à jour pour 8 colonnes (lg:grid-cols-8) -->
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4 md:gap-6 p-8 bg-gray-900/50 rounded-xl shadow-2xl">
 
-            <a href="https://www.morgannmusic.uk/" target="_blank" class="btn-pill bg-white text-gray-900 border border-white hover:bg-gray-200 focus:outline-none focus:ring-4 focus:ring-white/50 col-span-1">
-                Principal
+            <!-- Lien 1: Site principal -->
+            <a href="https://ai.morgannmusic.uk/" target="_blank" class="btn-pill bg-white text-gray-900 border border-white hover:bg-gray-200 focus:outline-none focus:ring-4 focus:ring-white/50 col-span-1">
+                MM AI
             </a>
 
-            <a href="https://send.morgannmusic.uk/menu" target="_blank" class="btn-pill bg-white text-gray-900 border border-white hover:bg-gray-200 focus:outline-none focus:ring-4 focus:ring-white/50 col-span-1">
-                Send
-            </a>
-
-
-            <a href="https://www.news.morgannmusic.uk/accueil" target="_blank" class="btn-pill bg-white text-gray-900 border border-white hover:bg-gray-200 focus:outline-none focus:ring-4 focus:ring-white/50 col-span-1">
-                News
-            </a>
-
-            <a href="https://www.feedback.morgannmusic.uk/" target="_blank" class="btn-pill bg-white text-gray-900 border border-white hover:bg-gray-200 focus:outline-none focus:ring-4 focus:ring-white/50 col-span-1">
-                Feedback
-            </a>
-
-            <a href="https://www.support.morgannmusic.uk" target="_blank" class="btn-pill bg-white text-gray-900 border border-white hover:bg-gray-200 focus:outline-none focus:ring-4 focus:ring-white/50 col-span-1">
-                Support
-            </a>
-
-            <a href="https://ai.morgannmusic.uk/ia" target="_blank" class="btn-pill bg-white text-gray-900 border border-white hover:bg-gray-200 focus:outline-none focus:ring-4 focus:ring-white/50 col-span-1">
-                IA chat
-            </a>
-
-            <a href="https://ai.morgannmusic.uk" target="_blank" class="btn-pill bg-white text-gray-900 border border-white hover:bg-gray-200 focus:outline-none focus:ring-4 focus:ring-white/50 col-span-1">
-                IA 
+            <!-- Lien 3: Calculette -->
+            <a href="https://www.code.morgannmusic.uk/menu" target="_blank" class="btn-pill bg-white text-gray-900 border border-white hover:bg-gray-200 focus:outline-none focus:ring-4 focus:ring-white/50 col-span-1">
+                Code AI
             </a>
 
 
@@ -426,7 +477,7 @@
 
     <div class="info-bouton-wrapper">
         <button class="info-bouton">
-    <img src="logo.png" alt="Icône d'information" class="bouton-icone">
+    <img src="logo3.png" alt="Icône d'information" class="bouton-icone">
     <a href="https://send.morgannmusic.uk/menu" target="_blank" class="info-texte">
                  Morgann Music Send
             </a>
@@ -444,9 +495,11 @@
         }
     });
 
+    // Script pour le menu hamburger
     const menuToggle = document.getElementById('menu-toggle');
     const navLinks = document.getElementById('nav-links');
 
+    // Nous utilisons un seul écouteur d'événement pour le basculement
     menuToggle.addEventListener('click', () => {
         navLinks.classList.toggle('active');
     });
@@ -455,18 +508,9 @@
         const infoBouton = document.querySelector('.info-bouton');
 
         infoBouton.addEventListener('click', function() {
+            // Inverse la classe 'ouvert' : si elle est là, il l'enlève ; sinon, il l'ajoute.
             infoBouton.classList.toggle('ouvert');
         });
-    });
-</script>
-
-<script>
-    gsap.from(".glow-line", {
-        y: -60,
-        opacity: 0,
-        duration: 1,
-
-        ease: "power3.out",
     });
 </script>
 
