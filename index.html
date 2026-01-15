@@ -14,10 +14,6 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
     <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png">
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
-
     <meta name="theme-color" content="#ffffff">
     <style>
         body {
@@ -165,21 +161,29 @@
         }
         
         .btn-pill {
+            /* Transforme les boutons en pilules */
             border-radius: 50px;
             font-weight: 600;
             padding: 10px 25px;
+            /* AJOUT IMPORTANT : Transition pour la fluidité (300ms) */
             transition: all 0.3s;
             white-space: nowrap;
+            /* Assure que la taille des boutons est plus stable */
+            /* Enlève la décoration du lien (soulignement) */
             text-decoration: none;
+            /* Assure que le lien remplisse la cellule de la grille et se comporte comme un bloc pour le centrage */
             text-align: center;
             align-items: center;
             align-self: center;
             align-content: center;
         }
+        /* NOUVEAU : Effet au survol (hover) */
         
         .btn-pill:hover {
+            /* Fait grossir le bouton de 5% */
             transform: scale(1.2);
             border: #7b7b7ba1 2px solid;
+            /* Ajoute une petite ombre pour donner un effet de "pop-out" */
             box-shadow: 0 0 20px rgba(255, 255, 255, 0.877);
             font-weight: 700;
         }
@@ -338,49 +342,37 @@
             margin-top: 40px;
             margin-bottom: auto;
         }
-        
-        .glow-line {
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 0px;
-            background: linear-gradient(90deg, #777777, #ececec, #828282, #ffffff, #9d9d9d);
-            z-index: 9999;
-            position: fixed;
-        }
-        
-        .glow-line::after {
-            content: "";
-            position: absolute;
-            top: 1;
-            left: 0;
-            width: 100%;
-            height: 40px;
-            background: inherit;
-            filter: blur(15px);
-            opacity: 0.5;
-        }
-        
-        .glow-line::after:hover {
-            opacity: 1;
-        }
     </style>
 </head>
 
-<div class="glow-line"></div>
-
-
-
+<header class="navbar" id="navbar">
+    <nav>
+        <div class="logo">
+            <a href="index.html">
+                <img src="logo2.png" alt="Logo Morgann Music" />
+            </a>
+        </div>
+        <!-- Bouton Menu Hamburger -->
+        <button class="menu-toggle" id="menu-toggle">☰</button>
+        <ul id="nav-links">
+            <!-- MODIFIEZ CES LIENS pour votre nouveau site -->
+            <li><a href="index.html">App</a></li>
+            <li><a href="https://www.morgannmusic.uk/">Morgann Music</a></li>
+        </ul>
+    </nav>
+</header>
 
 <body class="bg-black text-white min-h-screen flex flex-col items-center justify-center p-4">
 
 
+    <!-- Conteneur principal pour centrer le contenu -->
     <div class="w-full max-w-7xl">
 
         <div class="titre-navbar">
             <h1>Application</h1>
         </div>
 
+        <!-- Titre -->
         <div id="morgann-text" class="hero-text">
             <span class="word">Morgann</span>
             <span class="word">Music</span>
@@ -388,25 +380,36 @@
         </div>
 
 
-        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4 md:gap-6 p-8 bg-black-900/50 rounded-xl shadow-2xl">
+        <!-- Conteneur des boutons (Centré au milieu) -->
+        <!-- Responsive Grid mis à jour pour 8 colonnes (lg:grid-cols-8) -->
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4 md:gap-6 p-8 bg-gray-900/50 rounded-xl shadow-2xl">
 
+            <!-- Lien 1: Site principal -->
             <a href="https://www.morgannmusic.uk/" target="_blank" class="btn-pill bg-white text-gray-900 border border-white hover:bg-gray-200 focus:outline-none focus:ring-4 focus:ring-white/50 col-span-1">
                 Principal
             </a>
 
+            <!-- Lien 3: Calculette -->
             <a href="https://send.morgannmusic.uk/menu" target="_blank" class="btn-pill bg-white text-gray-900 border border-white hover:bg-gray-200 focus:outline-none focus:ring-4 focus:ring-white/50 col-span-1">
                 Send
             </a>
 
+            <!-- Lien 4: Shop -->
+            <a href="https://www.shop.morgannmusic.uk/" target="_blank" class="btn-pill bg-white text-gray-900 border border-white hover:bg-gray-200 focus:outline-none focus:ring-4 focus:ring-white/50 col-span-1">
+                Shop
+            </a>
 
+            <!-- Lien 5: News -->
             <a href="https://www.news.morgannmusic.uk/accueil" target="_blank" class="btn-pill bg-white text-gray-900 border border-white hover:bg-gray-200 focus:outline-none focus:ring-4 focus:ring-white/50 col-span-1">
                 News
             </a>
 
+            <!-- Lien 6: Feedback -->
             <a href="https://www.feedback.morgannmusic.uk/" target="_blank" class="btn-pill bg-white text-gray-900 border border-white hover:bg-gray-200 focus:outline-none focus:ring-4 focus:ring-white/50 col-span-1">
                 Feedback
             </a>
 
+            <!-- Lien 7: Support -->
             <a href="https://www.support.morgannmusic.uk" target="_blank" class="btn-pill bg-white text-gray-900 border border-white hover:bg-gray-200 focus:outline-none focus:ring-4 focus:ring-white/50 col-span-1">
                 Support
             </a>
@@ -444,9 +447,11 @@
         }
     });
 
+    // Script pour le menu hamburger
     const menuToggle = document.getElementById('menu-toggle');
     const navLinks = document.getElementById('nav-links');
 
+    // Nous utilisons un seul écouteur d'événement pour le basculement
     menuToggle.addEventListener('click', () => {
         navLinks.classList.toggle('active');
     });
@@ -455,18 +460,9 @@
         const infoBouton = document.querySelector('.info-bouton');
 
         infoBouton.addEventListener('click', function() {
+            // Inverse la classe 'ouvert' : si elle est là, il l'enlève ; sinon, il l'ajoute.
             infoBouton.classList.toggle('ouvert');
         });
-    });
-</script>
-
-<script>
-    gsap.from(".glow-line", {
-        y: -60,
-        opacity: 0,
-        duration: 1,
-
-        ease: "power3.out",
     });
 </script>
 
